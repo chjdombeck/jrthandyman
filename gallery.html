@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Gallery JRT Handyman & Home Services</title>
+  <meta name="description" content="See JRT Handyman's completed projects before and after transformations, repairs, painting, drywall, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#0D0D0D; color:#fff; margin:0; }
+    body::before { content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); opacity:0.025; pointer-events:none; z-index:9999; }
+    .font-heading { font-family:'Barlow',sans-serif; font-weight:900; }
+    h1, h2, h3, h4 { font-family:'Barlow',sans-serif; font-weight:900; }
+    .section-label { font-family:'Inter',sans-serif; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:#E10600; font-size:11px; }
+    ::-webkit-scrollbar { width:6px; } ::-webkit-scrollbar-track { background:#1F1F1F; } ::-webkit-scrollbar-thumb { background:#E10600; border-radius:3px; }
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:#fff; box-shadow:0 2px 16px rgba(0,0,0,0.10); transition:box-shadow 0.3s ease; }
+    .nav-link { font-family:'Oswald',sans-serif; font-size:15px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#1F1F1F; text-decoration:none; padding:6px 0; position:relative; transition:color 0.2s ease; }
+    .nav-link::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:#E10600; transform:scaleX(0); transition:transform 0.25s ease; }
+    .nav-link:hover { color:#E10600; } .nav-link:hover::after { transform:scaleX(1); }
+    .section-label { font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#E10600; font-weight:500; }
+    .red-line { display:inline-block; width:56px; height:4px; background:#E10600; border-radius:2px; }
+    .btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#E10600; color:#fff; font-family:'Oswald',sans-serif; font-size:15px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:14px 28px; border-radius:6px; text-decoration:none; border:none; cursor:pointer; box-shadow:0 4px 20px -2px rgba(225,6,0,0.45); transition:background 0.2s ease, transform 0.15s ease; }
+    .btn-primary:hover { background:#B80500; transform:translateY(-2px); }
+    .btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:transparent; color:#fff; font-family:'Oswald',sans-serif; font-size:15px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; padding:13px 26px; border-radius:6px; text-decoration:none; border:1.5px solid rgba(255,255,255,0.3); cursor:pointer; transition:background 0.2s ease, transform 0.15s ease; }
+    .btn-secondary:hover { background:rgba(255,255,255,0.08); transform:translateY(-2px); }
+    .cta-banner { background:linear-gradient(135deg,#1a0000 0%,#0D0D0D 50%,#1a0000 100%); position:relative; overflow:hidden; }
+    .cta-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 80% at 0% 50%, rgba(225,6,0,0.15) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 100% 50%, rgba(225,6,0,0.15) 0%, transparent 70%); }
+    .section { padding:96px 0; }
+    @media(max-width:768px) { .section { padding:64px 0; } }
+
+    /* Gallery items */
+    .gallery-item {
+      position:relative; overflow:hidden; border-radius:12px; cursor:pointer;
+      background:#1a1a1a;
+    }
+    .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
+    .gallery-item:hover img { transform:scale(1.06); }
+    .gallery-item .info {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+      padding:28px 20px 20px;
+      transform:translateY(8px);
+      opacity:0;
+      transition:opacity 0.35s ease, transform 0.35s ease;
+    }
+    .gallery-item:hover .info { opacity:1; transform:translateY(0); }
+
+    /* Before/after slider */
+    .ba-wrapper { position:relative; overflow:hidden; border-radius:12px; user-select:none; }
+    .ba-after { position:absolute; top:0; left:0; right:0; bottom:0; overflow:hidden; }
+    .ba-after img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
+    .ba-before img { width:100%; height:100%; object-fit:cover; display:block; }
+    .ba-divider {
+      position:absolute; top:0; bottom:0; width:2px; background:#E10600;
+      cursor:ew-resize; z-index:10;
+      box-shadow:0 0 12px rgba(225,6,0,0.6);
+    }
+    .ba-handle {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:40px; height:40px; background:#E10600; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 16px rgba(225,6,0,0.5);
+    }
+    .ba-label {
+      position:absolute; top:16px;
+      font-family:'Oswald',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.1em;
+      background:rgba(0,0,0,0.7); padding:4px 10px; border-radius:4px; color:#fff;
+    }
+
+    /* Filter buttons */
+    .filter-btn {
+      font-family:'Oswald',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.06em;
+      text-transform:uppercase; padding:9px 18px; border-radius:6px; border:1.5px solid rgba(255,255,255,0.15);
+      color:rgba(255,255,255,0.6); background:transparent; cursor:pointer;
+      transition:all 0.2s ease;
+    }
+    .filter-btn:hover, .filter-btn.active { background:#E10600; border-color:#E10600; color:#fff; }
+
+    #mobile-menu { display:none; background:#0D0D0D; border-top:1px solid rgba(255,255,255,0.08); }
+    #mobile-menu.open { display:block; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar" style="background:#E10600; font-family:'Inter',sans-serif; font-size:13px; font-weight:500; padding:8px 0;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+    <a href="tel:+15551234567" style="display:flex; align-items:center; gap:8px; color:#fff; text-decoration:none;">
+      <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Call or Text: (555) 123-4567
+    </a>
+    <span style="color:rgba(255,255,255,0.9);">Licensed & Insured · 5-Star Rated</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" style="top:37px; background:#fff; box-shadow:0 2px 16px rgba(0,0,0,0.10);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between py-2">
+      <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+        <img src="JRTHandymanLogo(1).png" alt="JRT Handyman" style="height:64px; width:auto; display:block;" />
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">Why Choose Us</a>
+        <a href="gallery.html" class="nav-link" style="color:#E10600;">Gallery</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="tel:+15551234567" style="display:inline-flex; align-items:center; gap:7px; font-family:'Oswald',sans-serif; font-size:14px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#1F1F1F; text-decoration:none; border:1.5px solid rgba(0,0,0,0.18); border-radius:6px; padding:10px 18px; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.color='#E10600'; this.style.borderColor='#E10600';" onmouseout="this.style.color='#1F1F1F'; this.style.borderColor='rgba(0,0,0,0.18)';">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          Call Now
+        </a>
+        <a href="index.html#quote" class="btn-primary" style="padding:11px 20px; font-size:13px;">Request a Quote</a>
+      </div>
+      <button class="md:hidden p-2" style="color:#1F1F1F; background:none; border:none; cursor:pointer;" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+        <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="background:#fff; border-top:1px solid rgba(0,0,0,0.08);">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+      <a href="index.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Home</a>
+      <a href="services.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Services</a>
+      <a href="about.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Why Choose Us</a>
+      <a href="gallery.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Gallery</a>
+      <a href="index.html#contact" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Contact</a>
+      <a href="tel:+15551234567" class="btn-primary text-center mt-4">Call: (555) 123-4567</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="padding-top:95px; background:linear-gradient(135deg,#0D0D0D 0%,#1a0000 100%); position:relative; overflow:hidden;">
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 80% 50%, rgba(225,6,0,0.1) 0%, transparent 70%); pointer-events:none;"></div>
+  <div style="position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(to bottom, #E10600 0%, transparent 100%);"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+    <div class="section-label mb-5">Proof of Work</div>
+    <h1 class="font-heading text-5xl sm:text-6xl font-bold text-white mb-6" style="letter-spacing:-0.02em;">Our Work Gallery</h1>
+    <div class="red-line mb-6"></div>
+    <p class="text-white/60 max-w-2xl" style="font-size:18px; line-height:1.75; font-weight:300;">Real projects. Real results. Browse our completed work and see the quality JRT delivers on every job big and small.</p>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER SHOWCASE -->
+<section class="section" style="background:#0D0D0D;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14">
+      <div class="section-label mb-4">Transformations</div>
+      <h2 class="font-heading text-4xl font-bold text-white mb-5" style="letter-spacing:-0.02em;">Before & After</h2>
+      <div class="red-line mx-auto mb-5"></div>
+      <p class="text-white/50 max-w-xl mx-auto" style="font-size:15px;">Drag the slider to reveal the transformation. These are real results from real JRT projects.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+
+      <!-- Before/After 1 -->
+      <div>
+        <div class="ba-wrapper" style="height:340px;" id="ba1">
+          <div class="ba-before" style="position:absolute; inset:0;">
+            <img src="https://placehold.co/700x400/0d0a0a/1a1212?text=BEFORE" alt="Before" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <div class="ba-after" id="ba1-after" style="width:50%;">
+            <img src="https://placehold.co/700x400/0a0d0a/121a12?text=AFTER" alt="After" style="width:700px; max-width:none;" />
+          </div>
+          <div class="ba-divider" id="ba1-divider" style="left:50%;">
+            <div class="ba-handle">
+              <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M8 5l-1.41 1.41L11.17 11H3v2h8.17l-4.58 4.59L8 19l7-7z"/><path d="M16 5l1.41 1.41L12.83 11H21v2h-8.17l4.58 4.59L16 19l-7-7z"/></svg>
+            </div>
+          </div>
+          <span class="ba-label" style="left:12px;">BEFORE</span>
+          <span class="ba-label" style="right:12px;">AFTER</span>
+        </div>
+        <div style="padding:16px 4px 0;">
+          <div class="font-heading text-lg font-bold text-white">Interior Painting</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.45);">Living room repaint full wall prep + 2 coats</div>
+        </div>
+      </div>
+
+      <!-- Before/After 2 -->
+      <div>
+        <div class="ba-wrapper" style="height:340px;" id="ba2">
+          <div class="ba-before" style="position:absolute; inset:0;">
+            <img src="https://placehold.co/700x400/0a080a/14101a?text=BEFORE" alt="Before" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
+          <div class="ba-after" id="ba2-after" style="width:50%;">
+            <img src="https://placehold.co/700x400/0a0a10/12121a?text=AFTER" alt="After" style="width:700px; max-width:none;" />
+          </div>
+          <div class="ba-divider" id="ba2-divider" style="left:50%;">
+            <div class="ba-handle">
+              <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M8 5l-1.41 1.41L11.17 11H3v2h8.17l-4.58 4.59L8 19l7-7z"/><path d="M16 5l1.41 1.41L12.83 11H21v2h-8.17l4.58 4.59L16 19l-7-7z"/></svg>
+            </div>
+          </div>
+          <span class="ba-label" style="left:12px;">BEFORE</span>
+          <span class="ba-label" style="right:12px;">AFTER</span>
+        </div>
+        <div style="padding:16px 4px 0;">
+          <div class="font-heading text-lg font-bold text-white">Drywall Repair</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.45);">Hole patch + texture match + paint</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GALLERY GRID -->
+    <div class="flex flex-wrap gap-3 justify-center mb-10">
+      <button class="filter-btn active" onclick="filterGallery('all', this)">All Projects</button>
+      <button class="filter-btn" onclick="filterGallery('painting', this)">Painting</button>
+      <button class="filter-btn" onclick="filterGallery('drywall', this)">Drywall</button>
+      <button class="filter-btn" onclick="filterGallery('repairs', this)">Repairs</button>
+      <button class="filter-btn" onclick="filterGallery('exterior', this)">Exterior</button>
+      <button class="filter-btn" onclick="filterGallery('fixtures', this)">Fixtures</button>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="gallery-grid">
+
+      <div class="gallery-item" style="height:260px;" data-cat="painting">
+        <img src="https://placehold.co/600x400/1a0808/2a1010?text=+" alt="Painting project" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Bedroom Repaint</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Interior Painting</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="drywall">
+        <img src="https://placehold.co/600x400/0a0a12/12121a?text=+" alt="Drywall repair" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Drywall Patch</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Drywall & Carpentry</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="exterior">
+        <img src="https://placehold.co/600x400/0a120a/121a12?text=+" alt="Deck work" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Deck Staining</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Exterior Work</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="fixtures">
+        <img src="https://placehold.co/600x400/10100a/1a1812?text=+" alt="Light fixture" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Ceiling Fan Install</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Fixture Installation</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="repairs">
+        <img src="https://placehold.co/600x400/0a1010/121a1a?text=+" alt="Door repair" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Door Replacement</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">General Repairs</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="painting">
+        <img src="https://placehold.co/600x400/10080a/1a1012?text=+" alt="Exterior paint" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Exterior Painting</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Painting</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="drywall">
+        <img src="https://placehold.co/600x400/12100a/1a1a10?text=+" alt="Carpentry" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Built-in Shelving</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Carpentry</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="exterior">
+        <img src="https://placehold.co/600x400/0a100a/12181a?text=+" alt="Fence work" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Fence Repair</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">Exterior Work</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" style="height:260px;" data-cat="repairs">
+        <img src="https://placehold.co/600x400/0a0a10/10101a?text=+" alt="Maintenance" />
+        <div class="info">
+          <div class="font-heading text-base font-bold text-white">Home Maintenance</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:3px;">General Maintenance</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="cta-banner" style="padding:80px 0;">
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <div class="section-label mb-5">Impressed by Our Work?</div>
+    <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white mb-5" style="letter-spacing:-0.02em;">Like What You See?<br />Let's Work Together.</h2>
+    <div class="red-line mx-auto mb-8"></div>
+    <p class="text-white/60 mb-10" style="font-size:17px; line-height:1.75; max-width:480px; margin-left:auto; margin-right:auto;">Your home could be our next project. Request a free quote and let's talk about what we can do for you.</p>
+    <div class="flex flex-wrap justify-center gap-5">
+      <a href="index.html#quote" class="btn-primary" style="font-size:17px; padding:18px 36px;">Request a Free Quote</a>
+      <a href="tel:+15551234567" class="btn-primary" style="font-size:17px; padding:18px 36px;">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Call or Text Us
+      </a>
+      <a href="mailto:info@jrthandyman.com" class="btn-secondary" style="font-size:17px; padding:17px 36px;">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#fff; border-top:1px solid rgba(0,0,0,0.08); box-shadow:0 -2px 16px rgba(0,0,0,0.06); padding:40px 0;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap justify-between items-center gap-8">
+    <a href="index.html" style="display:flex; align-items:center; text-decoration:none;">
+      <img src="JRTHandymanLogo(1).png" alt="JRT Handyman" style="height:56px; width:auto; display:block;" />
+    </a>
+    <div style="display:flex; gap:24px; flex-wrap:wrap;">
+      <a href="index.html" style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Home</a>
+      <a href="services.html" style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Services</a>
+      <a href="about.html" style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">About</a>
+      <a href="gallery.html" style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Gallery</a>
+    </div>
+    <p style="font-size:13px; color:#999;">© 2025 JRT Handyman & Home Services</p>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  const topbar = document.getElementById('topbar');
+  function positionNav() { navbar.style.top = topbar.offsetHeight + 'px'; }
+  positionNav(); window.addEventListener('resize', positionNav);
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) { navbar.classList.add('scrolled'); navbar.style.top='0'; topbar.style.transform='translateY(-100%)'; topbar.style.transition='transform 0.3s ease'; }
+    else { navbar.classList.remove('scrolled'); navbar.style.top=topbar.offsetHeight+'px'; topbar.style.transform='translateY(0)'; }
+  });
+
+  // Before/After sliders
+  function initSlider(wrapperId, afterId, dividerId) {
+    const wrapper = document.getElementById(wrapperId);
+    const after = document.getElementById(afterId);
+    const divider = document.getElementById(dividerId);
+    let dragging = false;
+
+    function setPosition(x) {
+      const rect = wrapper.getBoundingClientRect();
+      let pct = Math.max(5, Math.min(95, ((x - rect.left) / rect.width) * 100));
+      divider.style.left = pct + '%';
+      after.style.width = pct + '%';
+    }
+
+    divider.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+    window.addEventListener('mousemove', e => { if (dragging) setPosition(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    divider.addEventListener('touchstart', e => { dragging = true; }, {passive:true});
+    window.addEventListener('touchmove', e => { if (dragging) setPosition(e.touches[0].clientX); }, {passive:true});
+    window.addEventListener('touchend', () => { dragging = false; });
+  }
+
+  initSlider('ba1', 'ba1-after', 'ba1-divider');
+  initSlider('ba2', 'ba2-after', 'ba2-divider');
+
+  // Gallery filter
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#gallery-grid .gallery-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = '';
+        item.style.animation = 'fadeIn 0.3s ease';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+<style>
+@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</body>
+</html>

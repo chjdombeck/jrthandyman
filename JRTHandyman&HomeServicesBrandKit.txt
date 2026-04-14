@@ -1,0 +1,213 @@
+﻿JRT Handyman & Home Services — Brand Kit (Final)
+1. Brand Overview
+Company Name: JRT Handyman & Home Services
+Slogan:
+“Your Home. Our Priority.”
+Positioning:
+ A modern, trustworthy, professional handyman service focused on reliability, quality work, and a seamless customer experience.
+Core Message:
+ We help homeowners get projects done right—without stress, delays, or uncertainty.
+________________
+
+
+2. Brand Voice & Tone
+Keywords (locked in):
+* Professional
+* Warm
+* Welcoming
+* Trustworthy
+* Modern
+* Construction-focused
+Voice Rules:
+* Clear and confident (no fluff)
+* Friendly but not casual
+* Focus on solutions and outcomes
+* Speak like a skilled local expert
+Example:
+“From small repairs to full home projects, we handle it all—done right the first time.”
+________________
+
+
+3. Brand Colors (Website + AI Ready)
+Primary:
+* Red: #E10600
+* Black: #000000
+Secondary:
+* White: #FFFFFF
+* Dark Gray: #1F1F1F / #2A2A2A
+Usage:
+* Black/Dark Gray = backgrounds
+* White = text
+* Red = buttons, highlights, icons, CTAs
+________________
+
+
+4. Typography
+Headlines:
+* Montserrat / Oswald / Poppins (Bold)
+Body:
+* Open Sans / Inter / Roboto
+Style:
+* Strong, clean, readable
+* No decorative fonts
+________________
+
+
+5. Website Structure (CRITICAL — AI BUILD INSTRUCTIONS)
+This is your final page architecture 👇
+________________
+
+
+🏠 1. Home Page
+Purpose: Quick trust + drive action
+Sections:
+1. Hero
+   * Headline: Your Home. Our Priority.
+   * Subheadline: “Professional handyman and home services you can trust.”
+   * CTA buttons:
+      * Request a Quote
+      * Call / Text
+      * Email Us
+________________
+
+
+2. Services Preview
+* Short overview (link to Services page)
+________________
+
+
+3. Why Choose Us (Preview)
+* 3–4 bullets (link to full page)
+________________
+
+
+4. Work Gallery Preview
+* Before/after images (link to Gallery page)
+________________
+
+
+5. Strong CTA Section
+* “Need help with your home?”
+* Buttons:
+   * Request a Quote
+   * Call / Text
+   * Email
+________________
+
+
+🔧 2. Services Page (Separate Page)
+Purpose: Clearly show what you offer
+Layout:
+* Clean grid or list
+Services Include:
+* General Repairs
+* Home Maintenance
+* Painting
+* Drywall & Carpentry
+* Fixture Installation
+* Exterior Work
+Each Service Includes:
+* Short description
+* Optional image/icon
+CTA at top + bottom:
+* Request a Quote (form)
+* Call/Text
+* Email
+________________
+
+
+🤝 3. Why Choose Us + About Us (Combined Page)
+Purpose: Build trust + human connection
+Section 1: Why Choose Us
+* Reliable & On-Time
+* Quality Craftsmanship
+* Clear Communication
+* Professional Service
+________________
+
+
+Section 2: About Us
+* Short story about owner/operator
+* Local, hands-on, trustworthy
+* Focus on care, detail, and doing things right
+________________
+
+
+CTA Section:
+* “Let’s get your project done right.”
+* Request a Quote
+* Call/Text
+* Email
+________________
+
+
+🖼️ 4. Work Gallery Page
+Purpose: Show proof of work (VERY important)
+Layout:
+* Before & After images
+* Project-based sections if possible
+Optional Add:
+* Short captions (“Kitchen repaint”, “Drywall repair”, etc.)
+________________
+
+
+CTA Section:
+* “Like what you see? Let’s work together.”
+* Request a Quote
+* Call/Text
+* Email
+________________
+
+
+📞 5. Contact / CTA System (Across Entire Site)
+This is non-negotiable — high-converting structure
+Every page should include:
+1. Form CTA
+* Name
+* Phone
+* Email
+* Project Details
+________________
+
+
+2. Phone CTA
+* “Call or Text Us”
+* Clickable phone number
+________________
+
+
+3. Email CTA
+* Direct email option
+* “Send us an email”
+________________
+
+
+Placement:
+* Hero section
+* Mid-page sections
+* Bottom of every page
+* Sticky header (Call button preferred)
+________________
+
+
+6. Conversion Strategy (Modeled on Top Companies)
+* Multiple CTAs on every page
+* No dead ends (every page leads to action)
+* Clear service clarity
+* Visual proof (gallery)
+* Human connection (About section)
+________________
+
+
+7. Design Direction (For AI Tools)
+“Create a modern, high-converting handyman website using a black, red, white, and dark gray color palette. The design should be clean, bold, and professional. Use strong typography, clear sections, and multiple call-to-actions throughout. Focus on trust, simplicity, and ease of contact. Include separate pages for Services, Why Choose Us + About, and Work Gallery. Ensure all pages guide users toward requesting a quote, calling/texting, or emailing.”
+________________
+
+
+8. Brand Feel (Final)
+This brand should feel like:
+* A trusted professional you’d hire immediately
+* Clean, modern, no confusion
+* Strong but approachable
+👉 Think:
+“High-quality local pro who shows up, communicates clearly, and gets it done right.”
