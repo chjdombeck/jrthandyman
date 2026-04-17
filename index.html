@@ -324,7 +324,25 @@
     /* Section spacing */
     .section { padding: 96px 0; }
     @media (max-width: 768px) {
-      .section { padding: 64px 0; }
+      .section { padding: 48px 0; }
+    }
+
+    /* Hide topbar on mobile */
+    @media (max-width: 639px) {
+      #topbar { display: none; }
+      #navbar { top: 0 !important; }
+    }
+
+    /* Mobile hero */
+    @media (max-width: 767px) {
+      .hero-section { min-height: auto !important; padding-top: 80px !important; padding-bottom: 40px !important; }
+      .hero-copy-h1 { font-size: 2.5rem !important; }
+      .hero-form-wrap { display: none !important; }
+      .hero-trust-row { display: none !important; }
+      .why-img-wrap { height: 240px !important; }
+      .hero-cta-row { gap: 10px !important; }
+      .hero-cta-row a { font-size: 14px !important; padding: 12px 18px !important; }
+      .mobile-quote-section { display: block !important; }
     }
 
     /* Testimonial card */
@@ -416,24 +434,13 @@
 <div id="topbar">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
     <div class="flex items-center gap-6">
-      <a href="tel:+15551234567" class="flex items-center gap-2 text-white hover:text-white/80 transition-colors" style="text-decoration:none;">
+      <a href="tel:+17604970904" class="flex items-center gap-2 text-white hover:text-white/80 transition-colors" style="text-decoration:none;">
         <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        Call or Text: (555) 123-4567
-      </a>
-      <a href="mailto:info@jrthandyman.com" class="hidden sm:flex items-center gap-2 text-white hover:text-white/80 transition-colors" style="text-decoration:none;">
-        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        info@jrthandyman.com
+        Call or Text: (760) 497-0904
       </a>
     </div>
-    <div class="flex items-center gap-3 text-white/90">
-      <span class="flex items-center gap-1">
-        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        Licensed & Insured
-      </span>
-      <span class="hidden sm:flex items-center gap-1">
-        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        5-Star Rated
-      </span>
+    <div class="text-white/90" style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase;">
+      Your Home. Our Priority.
     </div>
   </div>
 </div>
@@ -452,13 +459,12 @@
         <a href="index.html" class="nav-link" style="color:#E10600;">Home</a>
         <a href="services.html" class="nav-link">Services</a>
         <a href="about.html" class="nav-link">Why Choose Us</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
 
       <!-- Desktop CTA -->
       <div class="hidden md:flex items-center gap-3">
-        <a href="tel:+15551234567" style="display:inline-flex; align-items:center; gap:7px; font-family:'Oswald',sans-serif; font-size:14px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#1F1F1F; text-decoration:none; border:1.5px solid rgba(0,0,0,0.18); border-radius:6px; padding:10px 18px; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.color='#E10600'; this.style.borderColor='#E10600';" onmouseout="this.style.color='#1F1F1F'; this.style.borderColor='rgba(0,0,0,0.18)';">
+        <a href="tel:+17604970904" style="display:inline-flex; align-items:center; gap:7px; font-family:'Oswald',sans-serif; font-size:14px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#1F1F1F; text-decoration:none; border:1.5px solid rgba(0,0,0,0.18); border-radius:6px; padding:10px 18px; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.color='#E10600'; this.style.borderColor='#E10600';" onmouseout="this.style.color='#1F1F1F'; this.style.borderColor='rgba(0,0,0,0.18)';">
           <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
           Call Now
         </a>
@@ -478,10 +484,9 @@
       <a href="index.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Home</a>
       <a href="services.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Services</a>
       <a href="about.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Why Choose Us</a>
-      <a href="gallery.html" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Gallery</a>
       <a href="#contact" class="nav-link block py-3" style="border-bottom:1px solid rgba(0,0,0,0.07);">Contact</a>
       <div class="flex flex-col gap-3 pt-4">
-        <a href="tel:+15551234567" class="btn-primary text-center">Call or Text: (555) 123-4567</a>
+        <a href="tel:+17604970904" class="btn-primary text-center">Call or Text: (760) 497-0904</a>
         <a href="#quote" class="btn-primary text-center" style="background:#1F1F1F;">Request a Quote</a>
       </div>
     </div>
@@ -489,7 +494,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero-bg relative min-h-screen flex items-center" style="padding-top: 95px;">
+<section class="hero-bg hero-section relative min-h-screen flex items-center" style="padding-top: 95px;">
   <!-- Background image placeholder -->
   <div class="hero-img-wrap" style="background-image: url('https://placehold.co/1920x1080/1a0808/221010?text=+');"></div>
 
@@ -502,32 +507,28 @@
       <!-- Left: Copy -->
       <div>
         <div class="section-label mb-6">Professional Home Services</div>
-        <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6" style="letter-spacing: -0.02em; line-height: 1.05;">
+        <h1 class="hero-copy-h1 font-heading text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6" style="letter-spacing: -0.02em; line-height: 1.05;">
           Your Home.<br />
           <span style="color: #E10600;">Our Priority.</span>
         </h1>
         <p class="text-lg sm:text-xl text-white/70 mb-8 max-w-xl" style="line-height: 1.75; font-weight: 300;">
-          Professional handyman and home services you can trust. From small repairs to major projects done right the first time, every time.
+          Serving the High Desert for over 34 years. From a leaky faucet to a full remodel, we handle it all with quality, precision, and a craftsman warranty.
         </p>
 
         <!-- CTAs -->
-        <div class="flex flex-wrap gap-4 mb-10">
+        <div class="hero-cta-row flex flex-wrap gap-4 mb-10">
           <a href="#quote" class="btn-primary">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
             Request a Quote
           </a>
-          <a href="tel:+15551234567" class="btn-secondary">
+          <a href="tel:+17604970904" class="btn-secondary">
             <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
             Call or Text
-          </a>
-          <a href="mailto:info@jrthandyman.com" class="btn-secondary">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            Email Us
           </a>
         </div>
 
         <!-- Trust signals -->
-        <div class="flex flex-wrap gap-4">
+        <div class="hero-trust-row flex flex-wrap gap-4">
           <div class="trust-badge">
             <svg width="18" height="18" style="color:#E10600;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
             <span style="font-size:13px; color: rgba(255,255,255,0.75);">Licensed & Insured</span>
@@ -544,7 +545,7 @@
       </div>
 
       <!-- Right: Quote Form -->
-      <div id="quote">
+      <div id="quote" class="hero-form-wrap">
         <div style="background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(20,20,20,0.98)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px 32px; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
           <div class="section-label mb-3">Get Started</div>
           <h2 class="font-heading text-2xl text-white font-bold mb-6" style="letter-spacing: -0.01em;">Request a Free Quote</h2>
@@ -571,12 +572,15 @@
               <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
               <select style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
                 <option value="">Select a service...</option>
-                <option>General Repairs</option>
-                <option>Home Maintenance</option>
-                <option>Painting</option>
-                <option>Drywall & Carpentry</option>
-                <option>Fixture Installation</option>
-                <option>Exterior Work</option>
+                <option>Electrical</option>
+                <option>Plumbing</option>
+                <option>Appliance Installation</option>
+                <option>Drywall</option>
+                <option>Door Installation</option>
+                <option>Window Install/Replace</option>
+                <option>Rain Gutters</option>
+                <option>General Repairs &amp; Odd Jobs</option>
+                <option>Senior/Disability Upgrades</option>
                 <option>Other</option>
               </select>
             </div>
@@ -610,25 +614,73 @@
 }
 </style>
 
+<!-- MOBILE QUOTE FORM (visible only on mobile) -->
+<section id="quote-mobile" style="background:#111; padding:40px 0; display:none;" class="mobile-quote-section">
+  <div class="max-w-lg mx-auto px-4">
+    <div class="section-label mb-3 text-center">Get Started</div>
+    <h2 class="font-heading text-3xl font-bold text-white mb-6 text-center" style="letter-spacing:-0.01em;">Request a Free Quote</h2>
+    <div style="background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(20,20,20,0.98)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 20px; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
+      <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">First Name</label>
+            <input type="text" placeholder="John" />
+          </div>
+          <div>
+            <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Phone Number</label>
+          <input type="tel" placeholder="(555) 000-0000" />
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
+          <select style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
+            <option value="">Select a service...</option>
+            <option>General Repairs</option>
+            <option>Home Maintenance</option>
+            <option>Painting</option>
+            <option>Drywall &amp; Carpentry</option>
+            <option>Fixture Installation</option>
+            <option>Exterior Work</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Project Details</label>
+          <textarea placeholder="Tell us about your project..." rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full" style="width:100%; justify-content:center; padding:16px;">
+          Submit Request It's Free
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </button>
+        <p style="font-size:12px; color:rgba(255,255,255,0.35); text-align:center;">We'll respond within 24 hours. No obligation.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- STATS BAR -->
 <div style="background: #E10600; padding: 0;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-2 md:grid-cols-4" style="border-left: 1px solid rgba(255,255,255,0.15);">
       <div class="stat-item" style="border-right: 1px solid rgba(255,255,255,0.15); padding: 28px 24px; text-align:center;">
-        <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">500+</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Projects Completed</div>
+        <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">34+</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Years Experience</div>
       </div>
       <div class="stat-item" style="border-right: 1px solid rgba(255,255,255,0.15); padding: 28px 24px; text-align:center;">
-        <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">5★</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Average Rating</div>
+        <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">Family</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Owned & Operated</div>
       </div>
       <div class="stat-item" style="border-right: 1px solid rgba(255,255,255,0.15); padding: 28px 24px; text-align:center;">
         <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">100%</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Satisfaction Rate</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Satisfaction Guaranteed</div>
       </div>
       <div class="stat-item" style="padding: 28px 24px; text-align:center;">
-        <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">24h</div>
-        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Response Time</div>
+        <div class="font-heading text-4xl font-bold text-white" style="line-height:1;">15+</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.8); margin-top:4px; letter-spacing:0.04em;">Cities Served</div>
       </div>
     </div>
   </div>
@@ -649,11 +701,11 @@
       <!-- Service 1 -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M13.78 15.3L19.78 21.3L21.89 19.14L15.89 13.14L13.78 15.3ZM17.5 10C17.5 10 19.07 8.43 19.5 7.5C20.3 5.8 20 4 20 4C20 4 18.2 3.7 16.5 4.5C15.57 4.93 14 6.5 14 6.5L9 5L5 9L8.5 12.5L10 11L11.5 12.5L10 14L11 15L12.5 13.5L14 15L15 14L13.5 12.5L12 11L13.5 9.5L17.5 10ZM6.5 14L4 16.5L5.5 18L3 20.5L4.5 22L9 17.5L6.5 14Z"/></svg>
+          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z"/></svg>
         </div>
-        <h3 class="font-heading text-xl font-bold text-white mb-3">General Repairs</h3>
-        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Leaky faucets, squeaky doors, broken fixtures no job is too small. We handle everyday repairs quickly and correctly.</p>
-        <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px; transition: gap 0.2s ease;">
+        <h3 class="font-heading text-xl font-bold text-white mb-3">General Repairs & Odd Jobs</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">From small fixes to full home improvements, no job is too small. We also handle senior citizen and disability-accessibility upgrades.</p>
+        <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px;">
           Learn More <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
       </div>
@@ -661,10 +713,10 @@
       <!-- Service 2 -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z"/></svg>
+          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
         </div>
-        <h3 class="font-heading text-xl font-bold text-white mb-3">Home Maintenance</h3>
-        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Keep your home in peak condition year-round with our comprehensive preventive maintenance services and seasonal checkups.</p>
+        <h3 class="font-heading text-xl font-bold text-white mb-3">Electrical</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">New lights, outlet and switch replacement, smoke detectors, and indoor/outdoor lighting by a licensed electrician with 30+ years of experience.</p>
         <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px;">
           Learn More <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
@@ -673,10 +725,10 @@
       <!-- Service 3 -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34c-.39-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.02 0-1.41z"/></svg>
+          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M17.66 8L12 2.35 6.34 8C4.78 9.56 4 11.64 4 13.64s.78 4.11 2.34 5.67 3.61 2.35 5.66 2.35 4.1-.79 5.66-2.35S20 15.64 20 13.64 19.22 9.56 17.66 8z"/></svg>
         </div>
-        <h3 class="font-heading text-xl font-bold text-white mb-3">Painting</h3>
-        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Interior and exterior painting with clean lines, proper prep, and lasting results. Transform any space with a fresh coat.</p>
+        <h3 class="font-heading text-xl font-bold text-white mb-3">Plumbing</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Faucet replacements, drains, p-traps, shower and bath fixtures, water valves, spigots, and water heater flush, maintenance, or full installation.</p>
         <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px;">
           Learn More <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
@@ -685,10 +737,10 @@
       <!-- Service 4 -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 5h6v3H5V5zm0 5h6v9H5v-9zm8 9v-9h6v9h-6zm6-11h-6V5h6v3z"/></svg>
+          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36 0-2.54-2.06-4.64-4.6-4.64-1.36 0-2.58.62-3.4 1.57L9 3l-1-1.43C7.18.62 5.96 0 4.6 0 2.06 0 0 2.1 0 4.64c0 .48.11.92.18 1.36H0v2h20V6zm-7.4-3.36c.32-.38.78-.64 1.4-.64 1.44 0 2.6 1.18 2.6 2.64 0 .48-.14.92-.36 1.36H13.2c-.08-.44-.2-.88-.2-1.36 0-.72.24-1.38.6-2zm-8 0C4.92 3.26 5.16 3.9 5.16 4.62c0 .48-.12.92-.2 1.36H2.18C1.96 5.54 1.82 5.1 1.82 4.62c0-1.46 1.16-2.62 2.6-2.62.62 0 1.08.26 1.4.64zM2 20c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8H2v12z"/></svg>
         </div>
-        <h3 class="font-heading text-xl font-bold text-white mb-3">Drywall & Carpentry</h3>
-        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Holes, cracks, and damaged walls restored seamlessly. Custom carpentry work that fits your space perfectly.</p>
+        <h3 class="font-heading text-xl font-bold text-white mb-3">Appliance Installation</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Stove/oven, refrigerator, dishwasher, microwave, washer/dryer, and water heater installation done safely and correctly.</p>
         <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px;">
           Learn More <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
@@ -697,10 +749,10 @@
       <!-- Service 5 -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
         </div>
-        <h3 class="font-heading text-xl font-bold text-white mb-3">Fixture Installation</h3>
-        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Lighting, fans, faucets, hardware, and more installed correctly and safely the first time, every time.</p>
+        <h3 class="font-heading text-xl font-bold text-white mb-3">Drywall & Doors</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Drywall repair and installation, plus door installation with locks and knobs. Patch holes, fix damage, and upgrade your entryways.</p>
         <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px;">
           Learn More <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
@@ -709,10 +761,10 @@
       <!-- Service 6 -->
       <div class="service-card">
         <div class="service-icon">
-          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          <svg width="26" height="26" fill="#E10600" viewBox="0 0 24 24"><path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14z"/></svg>
         </div>
-        <h3 class="font-heading text-xl font-bold text-white mb-3">Exterior Work</h3>
-        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Decks, fences, siding repairs, caulking, and curb appeal upgrades. Protect and beautify the outside of your home.</p>
+        <h3 class="font-heading text-xl font-bold text-white mb-3">Windows & Gutters</h3>
+        <p style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.7;">Window installation and replacement, plus rain gutter installation and cleaning. Protect your home from the outside in.</p>
         <a href="services.html" style="display:inline-flex; align-items:center; gap:6px; color:#E10600; font-size:13px; font-family:'Oswald',sans-serif; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; margin-top:20px;">
           Learn More <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
@@ -735,11 +787,11 @@
     <div class="grid lg:grid-cols-2 gap-16 items-center">
 
       <!-- Left: Image -->
-      <div class="img-treatment" style="height: 520px;">
+      <div class="img-treatment why-img-wrap" style="height: 520px;">
         <img src="https://placehold.co/800x600/1a0808/2a1010?text=+" alt="Professional handyman at work" style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
         <!-- Accent box -->
         <div style="position:absolute; bottom:28px; left:28px; background: #E10600; border-radius:10px; padding: 20px 24px; box-shadow: 0 8px 32px rgba(225,6,0,0.4);">
-          <div class="font-heading text-3xl font-bold text-white" style="line-height:1;">10+</div>
+          <div class="font-heading text-3xl font-bold text-white" style="line-height:1;">34+</div>
           <div style="font-size:13px; color:rgba(255,255,255,0.85); margin-top:2px;">Years of Experience</div>
         </div>
       </div>
@@ -749,41 +801,17 @@
         <div class="section-label mb-4">Why JRT</div>
         <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white mb-5" style="letter-spacing:-0.02em;">The JRT Difference</h2>
         <div class="red-line mb-8"></div>
-        <p class="text-white/60 mb-10" style="font-size:17px; line-height:1.75; font-weight:300;">We're not just another handyman service. We're your reliable local partner showing up on time, communicating clearly, and delivering results you can count on.</p>
+        <p class="text-white/60 mb-10" style="font-size:17px; line-height:1.75; font-weight:300;">We specialize in home repairs small or large. As a local family-owned business, we're committed to personalized solutions with quality and precision — your one stop shop for all home repairs.</p>
 
         <div class="flex flex-col gap-5">
           <div class="why-card">
             <div style="display:flex; align-items:flex-start; gap:16px;">
               <div style="width:40px; height:40px; background:rgba(225,6,0,0.1); border:1px solid rgba(225,6,0,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </div>
               <div>
-                <h4 class="font-heading text-lg font-bold text-white mb-1">Reliable & On-Time</h4>
-                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">We show up when we say we will. No waiting around, no last-minute cancellations. Your time matters.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="why-card">
-            <div style="display:flex; align-items:flex-start; gap:16px;">
-              <div style="width:40px; height:40px; background:rgba(225,6,0,0.1); border:1px solid rgba(225,6,0,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
-              </div>
-              <div>
-                <h4 class="font-heading text-lg font-bold text-white mb-1">Quality Craftsmanship</h4>
-                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">Every job gets done right. We take pride in our work and stand behind everything we do guaranteed.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="why-card">
-            <div style="display:flex; align-items:flex-start; gap:16px;">
-              <div style="width:40px; height:40px; background:rgba(225,6,0,0.1); border:1px solid rgba(225,6,0,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-              </div>
-              <div>
-                <h4 class="font-heading text-lg font-bold text-white mb-1">Clear Communication</h4>
-                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">You'll always know what's happening. We explain the work, provide honest estimates, and keep you informed.</p>
+                <h4 class="font-heading text-lg font-bold text-white mb-1">34+ Years of Experience</h4>
+                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">With over 34 years of hands-on experience — including 30 years as a licensed electrician and 13 years running his own electrical contracting company — JRT can handle anything.</p>
               </div>
             </div>
           </div>
@@ -794,8 +822,32 @@
                 <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
               </div>
               <div>
-                <h4 class="font-heading text-lg font-bold text-white mb-1">Professional Service</h4>
-                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">Licensed, insured, and fully professional. We treat your home with the same care we'd give our own.</p>
+                <h4 class="font-heading text-lg font-bold text-white mb-1">Craftsman Warranty</h4>
+                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">We're committed to doing it right the first time. Every job comes backed by our craftsman warranty — if it's not right, we make it right.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-card">
+            <div style="display:flex; align-items:flex-start; gap:16px;">
+              <div style="width:40px; height:40px; background:rgba(225,6,0,0.1); border:1px solid rgba(225,6,0,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M12 3L2 12h3v9h6v-6h2v6h6v-9h3L12 3z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-heading text-lg font-bold text-white mb-1">Local Family-Owned Business</h4>
+                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">We're your neighbors. Proudly serving Apple Valley, Victorville, Hesperia, and surrounding High Desert communities with personalized service you won't get from a big chain.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-card">
+            <div style="display:flex; align-items:flex-start; gap:16px;">
+              <div style="width:40px; height:40px; background:rgba(225,6,0,0.1); border:1px solid rgba(225,6,0,0.25); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="20" height="20" fill="#E10600" viewBox="0 0 24 24"><path d="M9 21h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.58 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2zM9 9l4.34-4.34L12 10h9v2l-3 7H9V9zM1 9h4v12H1z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-heading text-lg font-bold text-white mb-1">One Stop Solution</h4>
+                <p style="font-size:14px; color:rgba(255,255,255,0.5); line-height:1.65;">From a faucet replacement to a water heater to a small remodel — we handle it all so you don't have to call multiple contractors.</p>
               </div>
             </div>
           </div>
@@ -811,117 +863,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section" style="background: #0D0D0D;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-16">
-      <div class="section-label mb-4">What Clients Say</div>
-      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white mb-5" style="letter-spacing:-0.02em;">Trusted by Homeowners</h2>
-      <div class="red-line mx-auto"></div>
-    </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="testimonial-card">
-        <div class="stars mb-4" style="font-size:18px;">★★★★★</div>
-        <p style="font-size:15px; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:24px; padding-top:8px;">"JRT fixed a long list of issues we'd been putting off for months. They showed up on time, did incredible work, and left everything spotless. Highly recommend to anyone looking for a reliable handyman."</p>
-        <div style="display:flex; align-items:center; gap:12px; border-top: 1px solid rgba(255,255,255,0.08); padding-top:20px;">
-          <div style="width:42px; height:42px; border-radius:50%; background: linear-gradient(135deg, #E10600, #8B0000); display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-weight:700; font-size:17px; color:#fff; flex-shrink:0;">SM</div>
-          <div>
-            <div style="font-family:'Oswald',sans-serif; font-weight:600; color:#fff; font-size:15px;">Sarah M.</div>
-            <div style="font-size:12px; color:rgba(255,255,255,0.4); letter-spacing:0.04em;">Homeowner</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars mb-4" style="font-size:18px;">★★★★★</div>
-        <p style="font-size:15px; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:24px; padding-top:8px;">"Best handyman experience I've had. Professional, honest pricing, and the quality of work was exceptional. They painted two rooms and repaired our deck everything looks brand new. Will definitely call again."</p>
-        <div style="display:flex; align-items:center; gap:12px; border-top: 1px solid rgba(255,255,255,0.08); padding-top:20px;">
-          <div style="width:42px; height:42px; border-radius:50%; background: linear-gradient(135deg, #E10600, #8B0000); display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-weight:700; font-size:17px; color:#fff; flex-shrink:0;">JR</div>
-          <div>
-            <div style="font-family:'Oswald',sans-serif; font-weight:600; color:#fff; font-size:15px;">James R.</div>
-            <div style="font-size:12px; color:rgba(255,255,255,0.4); letter-spacing:0.04em;">Property Owner</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars mb-4" style="font-size:18px;">★★★★★</div>
-        <p style="font-size:15px; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:24px; padding-top:8px;">"I called JRT for a drywall repair and ended up hiring them for three more projects. They're communicative, show up when they say they will, and the results speak for themselves. Honest pricing too."</p>
-        <div style="display:flex; align-items:center; gap:12px; border-top: 1px solid rgba(255,255,255,0.08); padding-top:20px;">
-          <div style="width:42px; height:42px; border-radius:50%; background: linear-gradient(135deg, #E10600, #8B0000); display:flex; align-items:center; justify-content:center; font-family:'Oswald',sans-serif; font-weight:700; font-size:17px; color:#fff; flex-shrink:0;">LT</div>
-          <div>
-            <div style="font-family:'Oswald',sans-serif; font-weight:600; color:#fff; font-size:15px;">Lisa T.</div>
-            <div style="font-size:12px; color:rgba(255,255,255,0.4); letter-spacing:0.04em;">Homeowner</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY PREVIEW -->
-<section class="section" style="background: #111;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-16">
-      <div class="section-label mb-4">Our Work</div>
-      <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white mb-5" style="letter-spacing:-0.02em;">Work Gallery</h2>
-      <div class="red-line mx-auto mb-6"></div>
-      <p class="text-white/55 max-w-xl mx-auto" style="font-size:16px; line-height:1.7;">Real projects. Real results. See the quality JRT brings to every job.</p>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" style="grid-auto-rows: 220px;">
-      <div class="gallery-item md:col-span-2" style="grid-row: span 2; height: 100%;">
-        <img src="https://placehold.co/600x500/1a0808/2a1212?text=Before+%26+After" alt="Before and after project" style="height:100%; width:100%; object-fit:cover;" />
-        <div class="overlay">
-          <div style="position:absolute; bottom:20px; left:20px;">
-            <div style="font-family:'Oswald',sans-serif; font-size:16px; font-weight:700; color:#fff;">Interior Painting</div>
-            <div style="font-size:12px; color:rgba(255,255,255,0.65);">Before & After</div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://placehold.co/400x250/120a0a/221212?text=+" alt="Home repair project" style="height:100%; width:100%; object-fit:cover;" />
-        <div class="overlay">
-          <div style="position:absolute; bottom:16px; left:16px;">
-            <div style="font-family:'Oswald',sans-serif; font-size:15px; font-weight:700; color:#fff;">Drywall Repair</div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://placehold.co/400x250/0a1012/121a20?text=+" alt="Home improvement" style="height:100%; width:100%; object-fit:cover;" />
-        <div class="overlay">
-          <div style="position:absolute; bottom:16px; left:16px;">
-            <div style="font-family:'Oswald',sans-serif; font-size:15px; font-weight:700; color:#fff;">Fixture Install</div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://placehold.co/400x250/0a120a/121a12?text=+" alt="Exterior work" style="height:100%; width:100%; object-fit:cover;" />
-        <div class="overlay">
-          <div style="position:absolute; bottom:16px; left:16px;">
-            <div style="font-family:'Oswald',sans-serif; font-size:15px; font-weight:700; color:#fff;">Deck Repair</div>
-          </div>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://placehold.co/400x250/12100a/1a181a?text=+" alt="Home maintenance" style="height:100%; width:100%; object-fit:cover;" />
-        <div class="overlay">
-          <div style="position:absolute; bottom:16px; left:16px;">
-            <div style="font-family:'Oswald',sans-serif; font-size:15px; font-weight:700; color:#fff;">Carpentry</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mt-12">
-      <a href="gallery.html" class="btn-primary">
-        View Full Gallery
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- STRONG CTA SECTION -->
 <section class="cta-banner section" id="contact">
@@ -935,17 +877,13 @@
           Need Help With<br />Your Home?
         </h2>
         <div class="red-line mb-8"></div>
-        <p class="text-white/60 mb-10" style="font-size:17px; line-height:1.75; font-weight:300;">"Let's get your project done right." No stress. No delays. Just professional results you can count on.</p>
+        <p class="text-white/60 mb-10" style="font-size:17px; line-height:1.75; font-weight:300;">Call or text us, or fill out the quote form and we'll get back to you. No stress, no runaround — just honest work done right the first time.</p>
 
         <!-- Contact options -->
         <div class="flex flex-col gap-4">
-          <a href="tel:+15551234567" class="btn-primary" style="align-self:flex-start; font-size:17px; padding:18px 32px;">
+          <a href="tel:+17604970904" class="btn-primary" style="align-self:flex-start; font-size:17px; padding:18px 32px;">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-            Call or Text: (555) 123-4567
-          </a>
-          <a href="mailto:info@jrthandyman.com" class="btn-secondary" style="align-self:flex-start; font-size:17px; padding:17px 32px;">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            Send Us an Email
+            Call or Text: (760) 497-0904
           </a>
         </div>
       </div>
@@ -994,12 +932,12 @@
       <div>
         <h4 style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; color:#1F1F1F; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:20px;">Services</h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
-          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">General Repairs</a></li>
-          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Home Maintenance</a></li>
-          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Painting</a></li>
-          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Drywall & Carpentry</a></li>
-          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Fixture Installation</a></li>
-          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Exterior Work</a></li>
+          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Electrical</a></li>
+          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Plumbing</a></li>
+          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Appliance Installation</a></li>
+          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Drywall & Doors</a></li>
+          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">Windows & Gutters</a></li>
+          <li><a href="services.html" style="font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">General Repairs & Odd Jobs</a></li>
         </ul>
       </div>
 
@@ -1007,9 +945,9 @@
       <div>
         <h4 style="font-family:'Oswald',sans-serif; font-size:13px; font-weight:700; color:#1F1F1F; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:20px;">Contact</h4>
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <a href="tel:+15551234567" style="display:flex; align-items:center; gap:10px; font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">
+          <a href="tel:+17604970904" style="display:flex; align-items:center; gap:10px; font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">
             <svg width="15" height="15" fill="#E10600" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-            (555) 123-4567
+            (760) 497-0904
           </a>
           <a href="mailto:info@jrthandyman.com" style="display:flex; align-items:center; gap:10px; font-size:14px; color:#666; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#666'">
             <svg width="15" height="15" fill="#E10600" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -1018,16 +956,21 @@
         </div>
         <div style="margin-top:20px; padding:16px; background:#fafafa; border:1px solid rgba(0,0,0,0.08); border-radius:10px;">
           <div style="font-family:'Oswald',sans-serif; font-size:12px; color:#1F1F1F; font-weight:700; margin-bottom:6px; letter-spacing:0.1em; text-transform:uppercase;">Hours</div>
-          <div style="font-size:13px; color:#666;">Mon–Fri: 7:00am – 6:00pm</div>
-          <div style="font-size:13px; color:#666;">Sat: 8:00am – 4:00pm</div>
+          <div style="font-size:13px; color:#666;">Mon–Sat: 7:00am – 5:00pm</div>
           <div style="font-size:13px; color:#999;">Sun: Closed</div>
         </div>
       </div>
 
     </div>
 
+    <!-- Service Areas -->
+    <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top:20px; padding-bottom:20px; margin-bottom:0;">
+      <div style="font-family:'Oswald',sans-serif; font-size:12px; font-weight:700; color:#1F1F1F; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:10px;">Service Areas</div>
+      <p style="font-size:13px; color:#888; line-height:1.7;">Apple Valley · Hesperia · Phelan · Victorville · Oak Hills · Helendale · Adelanto · Lucerne Valley · Big Bear City &amp; Lake · Wrightwood · Crestline · San Bernardino · Fontana · Rialto · Rancho Cucamonga</p>
+    </div>
+
     <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top:24px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
-      <p style="font-size:13px; color:#999;">© 2025 JRT Handyman & Home Services. All rights reserved.</p>
+      <p style="font-size:13px; color:#999;">© 2026 JRT Handyman & Home Services. All rights reserved.</p>
       <div style="display:flex; gap:24px;">
         <a href="#" style="font-size:13px; color:#999; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#999'">Privacy Policy</a>
         <a href="#" style="font-size:13px; color:#999; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#E10600'" onmouseout="this.style.color='#999'">Terms of Service</a>
@@ -1036,13 +979,6 @@
   </div>
 </footer>
 
-<!-- Sticky mobile CTA -->
-<div style="position:fixed; bottom:0; left:0; right:0; display:none; z-index:990; padding:12px 16px; background:rgba(0,0,0,0.95); backdrop-filter:blur(12px); border-top:1px solid rgba(255,255,255,0.08);" id="sticky-cta" class="md:hidden">
-  <div class="grid grid-cols-2 gap-3">
-    <a href="tel:+15551234567" class="btn-primary text-center" style="font-size:13px; padding:12px;">Call Now</a>
-    <a href="#quote" class="btn-secondary text-center" style="font-size:13px; padding:12px;">Get Quote</a>
-  </div>
-</div>
 
 <script>
   // Navbar scroll effect
@@ -1061,23 +997,21 @@
     }
   });
 
-  // Show sticky mobile CTA after scroll
-  const stickyCta = document.getElementById('sticky-cta');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      stickyCta.style.display = 'block';
-    } else {
-      stickyCta.style.display = 'none';
-    }
-  });
 
   // Set navbar position based on topbar height
   function positionNav() {
-    navbar.style.top = topbar.offsetHeight + 'px';
+    var tb = document.getElementById('topbar');
+    if (tb && window.getComputedStyle(tb).display !== 'none') {
+      navbar.style.top = tb.offsetHeight + 'px';
+    } else {
+      navbar.style.top = '0px';
+    }
   }
   positionNav();
   window.addEventListener('resize', positionNav);
 </script>
+
+
 
 </body>
 </html>
