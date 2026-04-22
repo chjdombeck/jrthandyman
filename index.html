@@ -551,8 +551,58 @@
         <div style="background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(20,20,20,0.98)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px 32px; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
           <div class="section-label mb-3">Get Started</div>
           <h2 class="font-heading text-2xl text-white font-bold mb-6" style="letter-spacing: -0.01em;">Request a Free Quote</h2>
-          <iframe src="https://api.leadconnectorhq.com/widget/form/OkR48L0kXApcLajt1Rw8" style="width:100%; border:none; overflow:hidden; min-height:620px; border-radius:12px;" scrolling="no" id="ghl-form-hero"></iframe>
-          <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+          <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">First Name</label>
+                <input type="text" placeholder="John" />
+              </div>
+              <div>
+                <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Last Name</label>
+                <input type="text" placeholder="Smith" />
+              </div>
+            </div>
+            <div>
+              <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Phone Number</label>
+              <input type="tel" placeholder="(555) 000-0000" />
+            </div>
+            <div>
+              <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Email Address</label>
+              <input type="email" placeholder="john@example.com" />
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+              <div>
+                <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">City</label>
+                <input type="text" placeholder="Apple Valley" />
+              </div>
+              <div>
+                <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">State</label>
+                <input type="text" placeholder="CA" />
+              </div>
+            </div>
+            <div>
+              <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
+              <select style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
+                <option value="">Select a service...</option>
+                <option>General Repair</option>
+                <option>Electrical</option>
+                <option>Plumbing</option>
+                <option>Appliance Installation</option>
+                <option>Doors Or Windows</option>
+                <option>Rain Gutters</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Project Details</label>
+              <textarea placeholder="Tell us about your project..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full" style="width:100%; justify-content:center; padding:16px;">
+              Submit Request It's Free
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+            <p style="font-size:12px; color:rgba(255,255,255,0.35); text-align:center;">We'll respond within 24 hours. No obligation.</p>
+          </form>
         </div>
       </div>
 
@@ -579,7 +629,54 @@
     <div class="section-label mb-3 text-center">Get Started</div>
     <h2 class="font-heading text-3xl font-bold text-white mb-6 text-center" style="letter-spacing:-0.01em;">Request a Free Quote</h2>
     <div style="background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(20,20,20,0.98)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 20px; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
-      <iframe src="https://api.leadconnectorhq.com/widget/form/OkR48L0kXApcLajt1Rw8" style="width:100%; border:none; overflow:hidden; min-height:620px; border-radius:12px;" scrolling="no" id="ghl-form-mobile"></iframe>
+      <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">First Name</label>
+            <input type="text" placeholder="John" />
+          </div>
+          <div>
+            <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Last Name</label>
+            <input type="text" placeholder="Smith" />
+          </div>
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Phone Number</label>
+          <input type="tel" placeholder="(555) 000-0000" />
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">City</label>
+            <input type="text" placeholder="Apple Valley" />
+          </div>
+          <div>
+            <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">State</label>
+            <input type="text" placeholder="CA" />
+          </div>
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
+          <select style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
+            <option value="">Select a service...</option>
+            <option>General Repair</option>
+            <option>Electrical</option>
+            <option>Plumbing</option>
+            <option>Appliance Installation</option>
+            <option>Doors Or Windows</option>
+            <option>Rain Gutters</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Project Details</label>
+          <textarea placeholder="Tell us about your project..." rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full" style="width:100%; justify-content:center; padding:16px;">
+          Submit Request It's Free
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </button>
+        <p style="font-size:12px; color:rgba(255,255,255,0.35); text-align:center;">We'll respond within 24 hours. No obligation.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -825,7 +922,16 @@
       <div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius:16px; padding:36px 32px;">
           <h3 class="font-heading text-2xl font-bold text-white mb-6">Request a Quote</h3>
-          <iframe src="https://api.leadconnectorhq.com/widget/form/OkR48L0kXApcLajt1Rw8" style="width:100%; border:none; overflow:hidden; min-height:620px; border-radius:12px;" scrolling="no" id="ghl-form-cta"></iframe>
+          <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
+            <input type="text" placeholder="Your Full Name" />
+            <input type="tel" placeholder="Phone Number" />
+            <input type="email" placeholder="Email Address" />
+            <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:16px;">
+              Send My Request
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+          </form>
         </div>
       </div>
 
