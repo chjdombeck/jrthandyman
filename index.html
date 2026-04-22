@@ -337,13 +337,27 @@
     /* Mobile hero */
     @media (max-width: 767px) {
       .hero-section { min-height: auto !important; padding-top: 80px !important; padding-bottom: 40px !important; }
-      .hero-copy-h1 { font-size: 2.5rem !important; }
+      .hero-copy-h1 { font-size: 2.2rem !important; }
       .hero-form-wrap { display: none !important; }
       .hero-trust-row { display: none !important; }
       .why-img-wrap { height: auto !important; }
-      .hero-cta-row { gap: 10px !important; }
-      .hero-cta-row a { font-size: 14px !important; padding: 12px 18px !important; }
+      .hero-cta-row { gap: 10px !important; flex-wrap: wrap !important; }
+      .hero-cta-row a { font-size: 14px !important; padding: 12px 18px !important; width: 100% !important; justify-content: center !important; }
       .mobile-quote-section { display: block !important; }
+      /* Forms: stack first/last name on mobile */
+      .quote-form .grid { grid-template-columns: 1fr !important; }
+      /* Why section stack */
+      .why-section-grid { grid-template-columns: 1fr !important; }
+      /* Owner badge inside photo */
+      #owner-badge { left: 16px !important; bottom: 16px !important; }
+      /* Service cards padding */
+      .service-card { padding: 20px 16px !important; }
+      /* Stats bar wrap */
+      .stats-bar-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+      /* Section padding */
+      .section { padding: 48px 0 !important; }
+      /* CTA section padding */
+      .cta-section-inner { padding: 32px 20px !important; }
     }
 
     /* Testimonial card */
