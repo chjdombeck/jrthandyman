@@ -551,38 +551,38 @@
         <div style="background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(20,20,20,0.98)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px 32px; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
           <div class="section-label mb-3">Get Started</div>
           <h2 class="font-heading text-2xl text-white font-bold mb-6" style="letter-spacing: -0.01em;">Request a Free Quote</h2>
-          <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
+          <form class="quote-form flex flex-col gap-4" id="form-hero">
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">First Name</label>
-                <input type="text" placeholder="John" />
+                <input type="text" name="firstName" placeholder="John" />
               </div>
               <div>
                 <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Last Name</label>
-                <input type="text" placeholder="Smith" />
+                <input type="text" name="lastName" placeholder="Smith" />
               </div>
             </div>
             <div>
               <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Phone Number</label>
-              <input type="tel" placeholder="(555) 000-0000" />
+              <input type="tel" name="phone" placeholder="(555) 000-0000" />
             </div>
             <div>
               <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Email Address</label>
-              <input type="email" placeholder="john@example.com" />
+              <input type="email" name="email" placeholder="john@example.com" />
             </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
               <div>
                 <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">City</label>
-                <input type="text" placeholder="Apple Valley" />
+                <input type="text" name="city" placeholder="Apple Valley" />
               </div>
               <div>
                 <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">State</label>
-                <input type="text" placeholder="CA" />
+                <input type="text" name="state" placeholder="CA" />
               </div>
             </div>
             <div>
               <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
-              <select style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
+              <select name="service" style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
                 <option value="">Select a service...</option>
                 <option>General Repair</option>
                 <option>Electrical</option>
@@ -595,7 +595,7 @@
             </div>
             <div>
               <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Project Details</label>
-              <textarea placeholder="Tell us about your project..." rows="3"></textarea>
+              <textarea name="message" placeholder="Tell us about your project..." rows="3"></textarea>
             </div>
             <button type="submit" class="btn-primary w-full" style="width:100%; justify-content:center; padding:16px;">
               Submit Request It's Free
@@ -629,34 +629,34 @@
     <div class="section-label mb-3 text-center">Get Started</div>
     <h2 class="font-heading text-3xl font-bold text-white mb-6 text-center" style="letter-spacing:-0.01em;">Request a Free Quote</h2>
     <div style="background: linear-gradient(145deg, rgba(30,30,30,0.95), rgba(20,20,20,0.98)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 20px; box-shadow: 0 24px 64px rgba(0,0,0,0.6);">
-      <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
+      <form class="quote-form flex flex-col gap-4" id="form-mobile">
         <div class="grid grid-cols-2 gap-4">
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">First Name</label>
-            <input type="text" placeholder="John" />
+            <input type="text" name="firstName" placeholder="John" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Last Name</label>
-            <input type="text" placeholder="Smith" />
+            <input type="text" name="lastName" placeholder="Smith" />
           </div>
         </div>
         <div>
           <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" />
+          <input type="tel" name="phone" placeholder="(555) 000-0000" />
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">City</label>
-            <input type="text" placeholder="Apple Valley" />
+            <input type="text" name="city" placeholder="Apple Valley" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">State</label>
-            <input type="text" placeholder="CA" />
+            <input type="text" name="state" placeholder="CA" />
           </div>
         </div>
         <div>
           <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
-          <select style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
+          <select name="service" style="background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; color: rgba(255,255,255,0.7); font-family: 'Inter', sans-serif; font-size: 14px; padding: 12px 16px; width: 100%; outline: none;">
             <option value="">Select a service...</option>
             <option>General Repair</option>
             <option>Electrical</option>
@@ -669,7 +669,7 @@
         </div>
         <div>
           <label style="font-size:12px; color:rgba(255,255,255,0.5); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Project Details</label>
-          <textarea placeholder="Tell us about your project..." rows="3"></textarea>
+          <textarea name="message" placeholder="Tell us about your project..." rows="3"></textarea>
         </div>
         <button type="submit" class="btn-primary w-full" style="width:100%; justify-content:center; padding:16px;">
           Submit Request It's Free
@@ -922,11 +922,11 @@
       <div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius:16px; padding:36px 32px;">
           <h3 class="font-heading text-2xl font-bold text-white mb-6">Request a Quote</h3>
-          <form class="quote-form flex flex-col gap-4" onsubmit="return false;">
-            <input type="text" placeholder="Your Full Name" />
-            <input type="tel" placeholder="Phone Number" />
-            <input type="email" placeholder="Email Address" />
-            <textarea placeholder="Tell us about your project..." rows="4"></textarea>
+          <form class="quote-form flex flex-col gap-4" id="form-cta">
+            <input type="text" name="fullName" placeholder="Your Full Name" />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+            <input type="email" name="email" placeholder="Email Address" />
+            <textarea name="message" placeholder="Tell us about your project..." rows="4"></textarea>
             <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:16px;">
               Send My Request
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -1037,8 +1037,44 @@
   positionNav();
   window.addEventListener('resize', positionNav);
 </script>
+<script>
+const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/MXPn13RoFKmRYnKSX0YO/webhook-trigger/08f4cc02-2bec-4ab0-91f1-27a5d7d614ad';
 
+function submitToGHL(form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Sending...';
+    btn.disabled = true;
 
+    const data = {};
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+      if (el.name) data[el.name] = el.value;
+    });
 
+    try {
+      await fetch(GHL_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+      });
+      btn.innerHTML = '✓ Request Sent!';
+      btn.style.background = '#16a34a';
+      form.reset();
+      setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
+    } catch(err) {
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }
+  });
+}
+
+['form-hero','form-mobile','form-cta'].forEach(id => {
+  const f = document.getElementById(id);
+  if (f) submitToGHL(f);
+});
+</script>
 </body>
 </html>

@@ -266,36 +266,36 @@
       <p class="text-white/55" style="font-size:16px;">Fill out the form and we'll get back to you within 24 hours. No obligation, no pressure.</p>
     </div>
     <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:44px 40px;">
-      <form class="quote-form" onsubmit="return false;">
+      <form class="quote-form" id="form-services">
         <div class="grid sm:grid-cols-2 gap-5 mb-5">
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">First Name</label>
-            <input type="text" placeholder="John" />
+            <input type="text" name="firstName" placeholder="John" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Last Name</label>
-            <input type="text" placeholder="Smith" />
+            <input type="text" name="lastName" placeholder="Smith" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Phone Number</label>
-            <input type="tel" placeholder="(555) 000-0000" />
+            <input type="tel" name="phone" placeholder="(555) 000-0000" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Email Address</label>
-            <input type="email" placeholder="john@example.com" />
+            <input type="email" name="email" placeholder="john@example.com" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">City</label>
-            <input type="text" placeholder="Apple Valley" />
+            <input type="text" name="city" placeholder="Apple Valley" />
           </div>
           <div>
             <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">State</label>
-            <input type="text" placeholder="CA" />
+            <input type="text" name="state" placeholder="CA" />
           </div>
         </div>
         <div class="mb-5">
           <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Service Needed</label>
-          <select style="background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.12); border-radius:8px; color:rgba(255,255,255,0.7); font-family:'Inter',sans-serif; font-size:14px; padding:12px 16px; width:100%; outline:none;">
+          <select name="service" style="background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.12); border-radius:8px; color:rgba(255,255,255,0.7); font-family:'Inter',sans-serif; font-size:14px; padding:12px 16px; width:100%; outline:none;">
             <option value="">Select a service...</option>
             <option>General Repair</option><option>Electrical</option><option>Plumbing</option>
             <option>Appliance Installation</option><option>Doors Or Windows</option>
@@ -304,7 +304,7 @@
         </div>
         <div class="mb-6">
           <label style="font-size:12px; color:rgba(255,255,255,0.45); display:block; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.08em;">Project Details</label>
-          <textarea placeholder="Describe your project in detail..." rows="5"></textarea>
+          <textarea name="message" placeholder="Describe your project in detail..." rows="5"></textarea>
         </div>
         <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:18px; font-size:16px;">Submit My Request It's Free</button>
       </form>
@@ -353,6 +353,28 @@
   });
 </script>
 
+<script>
+const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/MXPn13RoFKmRYnKSX0YO/webhook-trigger/08f4cc02-2bec-4ab0-91f1-27a5d7d614ad';
+const f = document.getElementById('form-services');
+if (f) {
+  f.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = f.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Sending...';
+    btn.disabled = true;
+    const data = {};
+    f.querySelectorAll('input, select, textarea').forEach(el => { if (el.name) data[el.name] = el.value; });
+    try {
+      await fetch(GHL_WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'no-cors', body:JSON.stringify(data) });
+      btn.innerHTML = '✓ Request Sent!';
+      btn.style.background = '#16a34a';
+      f.reset();
+      setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
+    } catch(err) { btn.innerHTML = originalText; btn.disabled = false; }
+  });
+}
+</script>
 
 </body>
 </html>
