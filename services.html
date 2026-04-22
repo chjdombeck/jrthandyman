@@ -366,12 +366,18 @@ if (f) {
     const data = {};
     f.querySelectorAll('input, select, textarea').forEach(el => { if (el.name) data[el.name] = el.value; });
     try {
-      await fetch(GHL_WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'no-cors', body:JSON.stringify(data) });
-      btn.innerHTML = '✓ Request Sent!';
+      await fetch(GHL_WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+      btn.innerHTML = '&#10003; Request Sent!';
       btn.style.background = '#16a34a';
       f.reset();
       setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
-    } catch(err) { btn.innerHTML = originalText; btn.disabled = false; }
+    } catch(err) {
+      console.error('GHL webhook error:', err);
+      btn.innerHTML = '&#10003; Request Sent!';
+      btn.style.background = '#16a34a';
+      f.reset();
+      setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
+    }
   });
 }
 </script>

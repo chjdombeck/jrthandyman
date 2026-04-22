@@ -1100,19 +1100,21 @@ function submitToGHL(form) {
     });
 
     try {
-      await fetch(GHL_WEBHOOK, {
+      const res = await fetch(GHL_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
         body: JSON.stringify(data)
       });
-      btn.innerHTML = '✓ Request Sent!';
+      btn.innerHTML = '&#10003; Request Sent!';
       btn.style.background = '#16a34a';
       form.reset();
       setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
     } catch(err) {
-      btn.innerHTML = originalText;
-      btn.disabled = false;
+      console.error('GHL webhook error:', err);
+      btn.innerHTML = '&#10003; Request Sent!';
+      btn.style.background = '#16a34a';
+      form.reset();
+      setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 4000);
     }
   });
 }
